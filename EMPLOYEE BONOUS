@@ -1,0 +1,129 @@
+ import java.util.Scanner;
+
+
+            class Salary
+            {
+             public static void main (String args [])
+               {
+                 Scanner myInput = new Scanner (System.in);
+
+                  double salary =0, bonusRate =0, bonusAmount=0, salaryTotal=0,                           totalBonus=0, averageBonus=0, totalSalaries=0;
+    int salaryCounter=0;
+    char response;
+
+    do
+    {
+
+        System.out.println("Press a to enter a salary or press 'q' to quit");
+        response=myInput.next().charAt(0);
+
+
+        switch(response)
+        {
+            case 'a':
+
+            do
+            {
+
+            System.out.println("Enter employee salary or press q to quit");
+            salary = myInput.nextDouble();
+
+                if (salary <=0)
+                {
+                    System.out.println("Invalid entry please enter Salary again ");
+                }
+
+                 else if (salary >0 && salary <=10000)
+                {
+                    System.out.println("*************************************************************");
+                    System.out.println("The bonus rate is 5%");
+                    bonusRate = salary * .05;
+                    System.out.println("The bonus is " + bonusRate);
+                    salaryTotal= salary + bonusRate;
+                    System.out.println("The Total salary " + salaryTotal);
+                    salaryCounter=salaryCounter+1;
+                    System.out.println("*************************************************************");
+
+                }
+                else if (salary >10000 && salary <=20000)
+                {
+                    System.out.println("*************************************************************");
+                    System.out.println("The bonus rate is 10%");
+                    bonusRate = salary * .10;
+                    System.out.println("The bonus is " + bonusRate);
+                    salaryTotal= salary + bonusRate;
+                    System.out.println("The Total salary " + salaryTotal);
+                    salaryCounter=salaryCounter+1;
+                    System.out.println("*************************************************************");
+
+                }
+                else if (salary >20000 && salary <=30000)
+                {
+                    System.out.println("*************************************************************");
+                    System.out.println("The bonus rate is 15%");
+                    bonusRate = salary * .15;
+                    System.out.println("The bonus is " + bonusRate);
+                    salaryTotal= salary + bonusRate;
+                    System.out.println("The Total salary " + salaryTotal);
+                    salaryCounter=salaryCounter+1;
+                    System.out.println("*************************************************************");
+
+
+                }
+                else if (salary >30000)
+                {
+                    System.out.println("*************************************************************");
+                    System.out.println("The bonus rate is 20%");
+                    bonusRate = salary * .20;
+                    System.out.println("The bonus is " + bonusRate);
+                    salaryTotal= salary + bonusRate;
+                    System.out.println("The Total salary " + salaryTotal);
+                    salaryCounter=salaryCounter+1;
+                    System.out.println("*************************************************************");
+
+
+                }
+                //else
+                //{  //do i need to get rid of this?
+
+                //  System.out.println("");
+                //}
+
+            }while(salary <=0);{
+
+                break;
+
+                }case 'q':
+
+                salaryCounter = salaryCounter+1;
+                bonusAmount= salary*bonusRate;
+                salaryTotal=salary+bonusAmount;
+                totalBonus=totalBonus+bonusAmount;
+                totalSalaries=totalSalaries+salaryTotal;
+                averageBonus=totalBonus*salaryCounter;
+
+
+                System.out.printf("The Total Salaries paid including Bonus is %.2f " , totalSalaries);
+                System.out.println("Euro");
+                System.out.printf("The Total of Bonuses paid is %.2f ", totalBonus);
+                System.out.println("Euro");
+                System.out.printf("The Total of Average Bonuses paid is %.2f ", averageBonus);
+                System.out.println("Euro");
+
+                break;
+
+
+        }//end do
+
+
+ //end switch
+
+        }while (response != 'q');{
+        //do while loop to repeat until 'q' is entered.
+
+
+} //end do while loop
+
+
+    }//end main
+
